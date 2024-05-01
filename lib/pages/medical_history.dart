@@ -56,7 +56,6 @@ class _MedicalHistoryScreenState extends State<MedicalHistoryScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Text("Mother Mate",
-                    // textAlign: TextAlign.center,
                     style: GoogleFonts.inter(
                       fontSize: 35,
                       fontWeight: FontWeight.bold,
@@ -70,12 +69,7 @@ class _MedicalHistoryScreenState extends State<MedicalHistoryScreen> {
                 const SizedBox(
                   height: 20,
                 ),
-                // Padding(
-                //   padding: const EdgeInsets.symmetric(vertical: 15.0),
-                //   child: Container(
-                //     width: double.infinity,
-                //   ),
-                // ),
+
                 //2nnddd categoryy
 
                 InkWell(
@@ -124,8 +118,13 @@ class _MedicalHistoryScreenState extends State<MedicalHistoryScreen> {
                 ),
                 //3rd category
 
-                const MedicalCateg(
-                    img: 'asset/images/image 35.png', title: 'Baby routine'),
+                InkWell(
+                  child: const MedicalCateg(
+                      img: 'asset/images/image 35.png', title: 'Baby routine'),
+                  onTap: () {
+                    Navigator.pushNamed(context, 'baby_routine');
+                  },
+                ),
 
                 const SizedBox(
                   height: 20,

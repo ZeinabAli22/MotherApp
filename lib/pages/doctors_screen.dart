@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:proj_app/widget/health_category.dart';
+import 'package:proj_app/widget/nearby_doctors.dart';
 import 'package:proj_app/widget/upcoming_card.dart';
 
 class DoctorScreen extends StatefulWidget {
@@ -66,8 +67,19 @@ class _DoctorScreenState extends State<DoctorScreen> {
 
             //Health Category
             HealthCategories(),
+            SizedBox(
+              height: 30,
+            ),
+            Text(
+              'Nearby Doctors',
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            ),
 
+            SizedBox(
+              height: 15,
+            ),
             //Nearby Doctor
+            NearbyDoctors(),
           ],
         ));
   }

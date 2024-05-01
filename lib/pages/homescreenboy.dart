@@ -14,7 +14,7 @@ class _HomeScreenBState extends State<HomeScreenB> {
   }
 
   void openEntertainScreen() {
-    Navigator.pushNamed(context, 'entert');
+    Navigator.pushNamed(context, 'entertainment');
   }
 
   void openInstructionScreen() {

@@ -191,7 +191,7 @@ class HomeScreenG extends StatelessWidget {
                             color: Colors.transparent,
                             child: InkWell(
                               onTap: () {
-                                Navigator.pushNamed(context, "/Instruction");
+                                Navigator.pushNamed(context, "Instruction");
                               },
                               child: Column(
                                 children: <Widget>[
@@ -310,7 +310,7 @@ class CategoryCard extends StatelessWidget {
         color: Colors.transparent,
         child: InkWell(
           onTap: () {
-            Navigator.pushNamed(context, "/home_layout");
+            Navigator.pushNamed(context, "home_layout");
           },
           child: Column(
             children: <Widget>[

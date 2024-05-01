@@ -12,11 +12,10 @@ class _HealthCategoriesState extends State<HealthCategories> {
   @override
   Widget build(BuildContext context) {
     List<CustomIcon> customIcons = [
-      CustomIcon(icon: 'asset/images/Categ.jpeg', name: 'Appointment'),
-      CustomIcon(icon: 'asset/images/Dentist.jpeg', name: 'Dentist'),
-      CustomIcon(icon: 'asset/images/Heart.jpeg', name: 'Heart'),
-      CustomIcon(icon: 'asset/images/Heart.jpeg', name: 'Heart'),
-      CustomIcon(icon: 'asset/images/Heart.jpeg', name: 'Heart'),
+      CustomIcon(icon: 'asset/images/Hospital.jpg', name: 'Appointment'),
+      CustomIcon(icon: 'asset/images/Heart.jpg', name: 'Heart'),
+      CustomIcon(icon: 'asset/images/Vac.jpg', name: 'Vaccenation'),
+      CustomIcon(icon: 'asset/images/Ultrasonar.jpg', name: 'UltraSonar'),
     ];
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -27,9 +26,9 @@ class _HealthCategoriesState extends State<HealthCategories> {
               width: 60,
               height: 60,
               // padding: const EdgeInsets.all(15),
-              decoration: const BoxDecoration(
+              decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: Colors.white,
+                color: Colors.white.withOpacity(0.4),
               ),
               child: Image.asset(customIcons[index].icon),
             ),

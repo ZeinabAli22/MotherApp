@@ -1,11 +1,11 @@
 import 'package:curved_labeled_navigation_bar/curved_navigation_bar.dart';
 import 'package:curved_labeled_navigation_bar/curved_navigation_bar_item.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+// import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:proj_app/components/category_ent.dart';
-import 'package:proj_app/pages/homescreenboy.dart';
-import 'package:proj_app/widget/grid_item.dart';
+// import 'package:proj_app/components/category_ent.dart';
+// import 'package:proj_app/pages/stories_screen.dart';
+// import 'package:proj_app/widget/grid_item.dart';
 
 // ignore: must_be_immutable
 class EnterScreenB extends StatelessWidget {
@@ -90,25 +90,6 @@ class EnterScreenB extends StatelessWidget {
               ),
             ],
           ),
-          // actions: [
-          //   IconButton(
-          //       onPressed: () {},
-          //       icon: const Icon(
-          //         Icons.search_rounded,
-          //         size: 30,
-          //         color: Colors.indigo,
-          //       )),
-          //   // const SizedBox(
-          //   //   width: 2,
-          //   // ),
-          //   IconButton(
-          //       onPressed: () {},
-          //       icon: const Icon(
-          //         Icons.menu_rounded,
-          //         size: 30,
-          //         color: Colors.indigo,
-          //       )),
-          // ],
         ),
         body: SingleChildScrollView(
           child: Padding(
@@ -127,23 +108,72 @@ class EnterScreenB extends StatelessWidget {
                   height: 20,
                 ),
                 //iteams
-                StaggeredGrid.count(
-                  mainAxisSpacing: 20,
-                  crossAxisSpacing: 20,
-                  crossAxisCount: 2,
-                  children: categoriesGrid.asMap().entries.map((MapEntry map) {
-                    int index = map.key;
-                    return GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const HomeScreenB(),
-                            ));
-                      },
-                      child: GridItems(index),
-                    );
-                  }).toList(),
+                // StaggeredGrid.count(
+                //   mainAxisSpacing: 20,
+                //   crossAxisSpacing: 20,
+                //   crossAxisCount: 2,
+                //   children: categoriesGrid.asMap().entries.map((MapEntry map) {
+                //     int index = map.key;
+                //     return GestureDetector(
+                //       onTap: () {
+                //         Navigator.push(
+                //             context,
+                //             MaterialPageRoute(
+                //               builder: (context) =>
+                //                   StoriesScreen(categoriesGrid[index]),
+                //             ));
+                //       },
+                //       // child: GridItems(index),
+                //     );
+                //   }).toList(),
+                // ),
+                //iteams
+                Expanded(
+                  child: GridView.count(
+                    crossAxisCount: 2,
+                    children: <Widget>[
+                      InkWell(
+                        child: const GridItems(
+                          title: 'Stories',
+                          img: 'asset/images/image 8.png',
+                        ),
+                        onTap: () {
+                          Navigator.pushNamed(context, 'homescreenboy');
+                        },
+                      ),
+
+                      //2nd Category
+                      InkWell(
+                        child: const GridItems(
+                          title: 'Games',
+                          img: 'asset/images/image 9.png',
+                        ),
+                        onTap: () {
+                          Navigator.pushNamed(context, 'homescreenboy');
+                        },
+                      ),
+                      //3rd Category
+                      InkWell(
+                        child: const GridItems(
+                          title: 'Videos',
+                          img: 'asset/images/image 10.png',
+                        ),
+                        onTap: () {
+                          Navigator.pushNamed(context, 'homescreenboy');
+                        },
+                      ),
+                      //4th Category
+                      InkWell(
+                        child: const GridItems(
+                          title: 'AI-Engine',
+                          img: 'asset/images/image 884.png',
+                        ),
+                        onTap: () {
+                          Navigator.pushNamed(context, 'homescreenboy');
+                        },
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),
@@ -170,5 +200,49 @@ class EnterScreenB extends StatelessWidget {
                 label: 'Profile',
               ),
             ]));
+  }
+}
+
+class GridItems extends StatelessWidget {
+  final String title;
+  final String img;
+  const GridItems({super.key, required this.title, required this.img});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(vertical: 50),
+      decoration: BoxDecoration(
+        boxShadow: const [
+          BoxShadow(
+            color: Colors.white,
+            blurRadius: 1,
+            offset: Offset(0.8, 0.8),
+          ),
+        ],
+        color: Colors.white,
+        border: Border.all(color: Colors.indigo, width: 1.5),
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: Column(
+        children: [
+          Image(
+            image: AssetImage(img),
+            width: 100,
+            fit: BoxFit.contain,
+          ),
+          const SizedBox(
+            height: 8,
+          ),
+          Text(
+            title,
+            style: GoogleFonts.inter(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Colors.indigo),
+          ),
+        ],
+      ),
+    );
   }
 }

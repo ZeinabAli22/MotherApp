@@ -5,7 +5,7 @@ import 'package:proj_app/components/category_ent.dart';
 class GridItems extends StatelessWidget {
   // const GridItems({super.key});
   final int index;
-  const GridItems(this.index);
+  const GridItems(this.index, {super.key});
 
   @override
   Widget build(BuildContext context) {

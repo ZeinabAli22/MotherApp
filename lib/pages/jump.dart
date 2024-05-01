@@ -96,7 +96,7 @@ class Jump extends StatelessWidget {
           Center(
             child: ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, "/signup");
+                Navigator.pushNamed(context, "signup");
               },
               style: ButtonStyle(
                 alignment: Alignment.bottomRight,
